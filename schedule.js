@@ -181,7 +181,7 @@ let temp = 0;
 nextBtn.forEach(element => {
   // console.log(element)
   element.addEventListener("click", ()=>{
-    temp++;
+    // temp++;
     nextstep();
   })
 });
@@ -189,23 +189,56 @@ nextBtn.forEach(element => {
 prevBtn.forEach(element => {
   // console.log(element)
   element.addEventListener("click", ()=>{
-    temp--;
+    // temp--;
     prevstep();
   })
 });
 
 const nextstep = ()=>{
-  formStep.forEach((formstep)=>{
-    formstep.classList.contains("act")&&
-    formstep.classList.remove("act")
-  })
-  formStep[temp].classList.add("act");
+  // formStep.forEach((formstep)=>{
+    //   formstep.classList.contains("act")&&
+  //   formstep.classList.remove("act")
+  // })
+  // formStep[temp].classList.add("act");
+  let a = 0;
+  for(a = 0;a<3;a++){
+    if(formStep[a].classList.contains("act")){
+      break;
+    }
+  }
+  formStep[a].classList.remove("act");
+  a++;
+  formStep[a].classList.add("act");
 }
 
 const prevstep = ()=>{
-  formStep.forEach((formstep)=>{
-    formstep.classList.contains("act")&&
-    formstep.classList.remove("act")
-  })
-  formStep[temp].classList.add("act");
+  // formStep.forEach((formstep)=>{
+  //   formstep.classList.contains("act")&&
+  //   formstep.classList.remove("act")
+  // })
+  // formStep[temp].classList.add("act");
+  let a = 0;
+  for(a = 0;a<3;a++){
+    if(formStep[a].classList.contains("act")){
+      break;
+    }
+  }
+  formStep[a].classList.remove("act");
+  a--;
+  formStep[a].classList.add("act");
 }
+
+const leftnav = (e)=>{
+  for(let i of formStep){
+    if(i.id == e && i.classList.contains("act")){
+      break;
+    }
+    if(i.id == e && !(i.classList.contains("act"))){
+      i.classList.add("act");
+    }
+    else{
+      i.classList.remove("act");
+    }
+  }
+}
+

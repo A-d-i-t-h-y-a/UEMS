@@ -124,7 +124,40 @@
       //   }
       // }
       // console.log(tab)
+      let navitem = document.getElementsByClassName("nav-link");
+      const func = (e)=>{
+        for(let item of navitem){
+          if(item == e && item.classList.contains("active")){
+            break;
+          }
+          if(item == e && !(item.classList.contains("active"))){
+            item.classList.add("active");
+          }
+          else{
+            item.classList.remove("active");
+          }
+        }
+      }
+      const ptoggle = ()=>{
+        let x = document.getElementById("Pass");
+        let icon = document.getElementsByClassName("bi")[0];
+        if (x.type === "password") {
+          x.type = "text";
+        }
+        else {
+          x.type = "password";
+        }
+        if(icon.classList.contains("bi-eye")){
+          icon.classList.remove("bi-eye");
+          icon.classList.add("bi-eye-slash");
+        }
+        else{
+          icon.classList.remove("bi-eye-slash");
+          icon.classList.add("bi-eye");
+        }
+      }
     </script>
+
 </body>
 
 </html>

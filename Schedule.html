@@ -1,165 +1,174 @@
 <!DOCTYPE html>
-<html lang="en" style = "height: 100%;">
+<html lang="en" style="height: 100%;">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" /> -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
-    <script>
-      window.onload = ()=>{
-        let head = document.getElementById("header");
-        let foot = document.getElementById("footer");
-        let p1 = fetch("./temp.html");
-        let p2 = fetch("./foot.html");
-        p1.then((response)=>{
-          return response.text();
-        }).then((content)=>{
-          head.innerHTML = content;
-        })
-        p2.then((response)=>{
-          return response.text();
-        }).then((content)=>{
-          foot.innerHTML = content;
-        })
-      }
-    </script>
-    <link rel="stylesheet" href="./schedule.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+  <script>
+    window.onload = () => {
+      let head = document.getElementById("header");
+      let foot = document.getElementById("footer");
+      let p1 = fetch("./temp.html");
+      let p2 = fetch("./foot.html");
+      p1.then((response) => {
+        return response.text();
+      }).then((content) => {
+        head.innerHTML = content;
+      })
+      p2.then((response) => {
+        return response.text();
+      }).then((content) => {
+        foot.innerHTML = content;
+      })
+    }
+  </script>
+  <link rel="stylesheet" href="./schedule.css">
 </head>
+
 <body style="height: 100%;">
-    <header id="header"></header>
-    <div id="main" class="container-fluid-lg d-flex flex-column flex-sm-row" style="height: 100%;">
-      <div class="my-sm-5 ms-lg-5 shadow bg-body rounded mx-3" style="height: 88%;">
-        <!-- <div class="row h-100"> -->
-        <div class="d-flex flex-row flex-sm-column justify-content-evenly mx-lg-5 h-100">
-          <button class="btn btn-link text-decoration-none text-black">Book</button>
-          <button class="btn btn-link text-decoration-none text-black">Refreshments</button>
-          <button class="btn btn-link text-decoration-none text-black">Request</button>
-        </div>
+  <header id="header"></header>
+  <div id="main" class="container-fluid-lg d-flex flex-column flex-sm-row" style="height: 100%;">
+    <div class="my-sm-5 ms-lg-5 shadow bg-body rounded mx-3 py-3">
+      <!-- <div class="row h-100"> -->
+      <div class="d-flex flex-row flex-sm-column justify-content-evenly mx-lg-5 h-100">
+        <button class="btn btn-link text-decoration-none text-black" onclick="leftnav('book')">Book</button>
+        <button class="btn btn-link text-decoration-none text-black"
+          onclick="leftnav('refreshment')">Refreshments</button>
+        <button class="btn btn-link text-decoration-none text-black" onclick="leftnav('request')">Request</button>
       </div>
-      <form class="Book w-75 ms-5 me-5 my-5 shadow bg-body rounded d-flex container" style="height: 88%;">
-          <div id="book" class="step act" style="overflow: auto;">
-            <ul>
-              <li>
-                <div class="row input-group mb-5">
-                  <span class="me-5 col-lg-2">Event Name</span>
-                  <input type="text" class="form-control col-lg-8" placeholder="Event Name" aria-label="Event name" name="Event Name" aria-describedby="basic-addon1">
+    </div>
+    <form class="Book w-75 ms-5 me-5 my-5 shadow bg-body rounded d-flex container">
+      <div id="book" class="step act" style="overflow: auto;">
+        <ul>
+          <li>
+            <div class="row input-group mb-5">
+              <span class="me-5 col-lg-2">Event Name</span>
+              <input type="text" class="form-control col-lg-8" placeholder="Event Name" aria-label="Event name"
+                name="Event Name" aria-describedby="basic-addon1">
+            </div>
+          </li>
+          <li>
+            <div class="row input-group mb-5">
+              <span class="me-5 col-lg-2">Description</span>
+              <textarea class="form-control col-8" aria-label="With textarea"></textarea>
+            </div>
+          </li>
+          <li>
+            <div class="row input-group mb-5">
+              <label class="me-5 col-lg-2">Event Type</label>
+              <select class="form-select col-8" id="Type" name="type">
+                <option selected>Offline</option>
+                <option value="1">Online</option>
+              </select>
+            </div>
+          </li>
+          <li class="mb-5">
+            <div class="row input-group mb-5">
+              <span class="me-5 col-lg-2">Date</span>
+              <input type="date" class="form-control" name="date">
+              <span class="me-5 col-lg-2">Time</span>
+              <input type="time" class="form-control" name="time">
+            </div>
+          </li>
+          <li>
+            <div class="row input-group mb-5">
+              <label class="me-5 col-lg-2">Venue</label>
+              <select class="form-select col-8" id="Venue" name="venue">
+                <option selected>Auditorium</option>
+                <option value="1">Mini Auditorium</option>
+              </select>
+            </div>
+          </li>
+          <li style="text-align: center;">
+            <button class="btn btn-primary btn-next" type="button">Next</button>
+          </li>
+        </ul>
+      </div>
+      <div id="refreshment" class="step" style="overflow: auto;">
+        <ul>
+          <li>
+            <div class="row my-3">
+              <h3 class="col-lg-4">Menu (<button class="btn btn-link text-decoration-none col-4 fs-6 text-primary"
+                  onclick="checkfunc()" type="button">Select All</button>)</h3>
+            </div>
+          </li>
+          <li>
+            <div class="ms-1 p-4 shadow bg-body rounded w-75 mh-50 container">
+              <div class="row my-lg-4 justify-content-evenly">
+                <div class="col-lg-3 form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="Samosa" style="width: 16px;">
+                  <label class="form-check-label" for="Samosa">
+                    Samosa
+                  </label>
                 </div>
-              </li>
-              <li>
-                <div class="row input-group mb-5">
-                  <span class="me-5 col-lg-2">Description</span>
-                  <textarea class="form-control col-8" aria-label="With textarea"></textarea>
+                <div class="col-lg-3 form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="Frooti" style="width: 16px;">
+                  <label class="form-check-label" for="Frooti">
+                    Frooti
+                  </label>
                 </div>
-              </li>
-              <li>
-                <div class="row input-group mb-5">
-                  <label class="me-5 col-lg-2">Event Type</label>
-                  <select class="form-select col-8" id="inputGroupSelect01" name="type">
-                    <option selected>Offline</option>
-                    <option value="1">Online</option>
-                  </select>
+                <div class="col-lg-3 form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="FiveStar" style="width: 16px;">
+                  <label class="form-check-label" for="FiveStar">
+                    Five Star
+                  </label>
                 </div>
-              </li>
-              <li class="mb-5">
-                  <div class="row input-group mb-5">
-                    <span class="me-5 col-lg-2">Date</span>
-                    <input type="date" class="form-control" name="date">
-                    <span class="me-5 col-lg-2">Time</span>
-                    <input type="time" class="form-control" name="time">
-                  </div>
-              </li>
-              <li>
-                <div class="row input-group mb-5">
-                  <label class="me-5 col-lg-2">Venue</label>
-                  <select class="form-select col-8" id="inputGroupSelect01" name="venue">
-                    <option selected>Auditorium</option>
-                    <option value="1">Mini Auditorium</option>
-                  </select>
+              </div>
+              <div class="row my-lg-4 justify-content-evenly">
+                <div class="col-lg-3 form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="Chips" style="width: 16px;">
+                  <label class="form-check-label" for="Chips">
+                    Chips
+                  </label>
                 </div>
-              </li>
-              <li style="text-align: center;">
-                <button class="btn btn-primary btn-next" type="button">Next</button>          
-              </li>
-            </ul>
-          </div>
-          <div id="refreshment" class="step" style="overflow: auto;">
-            <ul>
-              <li>
-                <div class="row my-3">
-                  <h3 class="col-lg-4">Menu (<button class="btn col-4 fs-6 text-primary" onclick="checkfunc()" type="button">Select All</button>)</h3>
+                <div class="col-lg-3 form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="CurryPuff" style="width: 16px;">
+                  <label class="form-check-label" for="CurryPuff">
+                    Curry Puff
+                  </label>
                 </div>
-              </li>
-              <li>
-                <div class="ms-5 px-4 shadow bg-body rounded w-75 mh-50 container">
-                  <div class="row my-lg-4 justify-content-evenly">
-                    <div class="col-lg-3 form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="Samosa" style="width: 16px;">
-                      <label class="form-check-label" for="Samosa">
-                        Samosa
-                      </label>
-                    </div>
-                    <div class="col-lg-3 form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="Frooti" style="width: 16px;">
-                      <label class="form-check-label" for="Frooti">
-                        Frooti
-                      </label>
-                    </div>
-                    <div class="col-lg-3 form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="width: 16px;">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                      </label>
-                    </div>
-                  </div>
-                  <div class="row my-lg-4 justify-content-evenly">
-                    <div class="col-lg-3 form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="width: 16px;">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                      </label>
-                    </div>
-                    <div class="col-lg-3 form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="width: 16px;">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                      </label>
-                    </div>
-                    <div class="col-lg-3 form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="width: 16px;">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                      </label>
-                    </div>
-                  </div>
+                <div class="col-lg-3 form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="Sprite" style="width: 16px;">
+                  <label class="form-check-label" for="Sprite">
+                    Sprite
+                  </label>
                 </div>
-              </li>
-              <li>
-                <div class="row input-group my-5">
-                  <span class="col-lg-2">Quantity :</span>
-                  <input type="text" class="col-lg-2 form-control mx-sm-5" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
-                </div>
-              </li>
-              <li class="mb-5">
-                <div class="row input-group ">
-                  <span class="col-lg-2">Description :</span>
-                  <textarea class="form-control col-8" aria-label="With textarea"></textarea>
-                </div>
-              </li>
-              <li style="text-align: center;">
-                <div class="my-3" style="text-align: center">
-                  <button class="btn btn-primary btn-prev" type="button">Previous</button>
-                  <button class="btn btn-primary btn-next" type="button">Next</button>
-                </div>          
-              </li>
-            </ul>
-            <!-- <div class="row my-3">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row input-group my-5">
+              <span class="col-lg-2">Quantity :</span>
+              <input type="text" class="col-lg-8 form-control" placeholder="Quantity" aria-label="Quantity"
+                aria-describedby="basic-addon1">
+            </div>
+          </li>
+          <li class="mb-5">
+            <div class="row input-group ">
+              <span class="col-lg-2">Description :</span>
+              <textarea class="form-control col-8" aria-label="With textarea"></textarea>
+            </div>
+          </li>
+          <li style="text-align: center;">
+            <div class="my-3" style="text-align: center">
+              <button class="btn btn-primary btn-prev" type="button">Previous</button>
+              <button class="btn btn-primary btn-next" type="button">Next</button>
+            </div>
+          </li>
+        </ul>
+        <!-- <div class="row my-3">
               <h3 class="col-lg-4">Menu (<button class="btn col-4 fs-6 text-primary" onclick="checkfunc()" type="button">Select All</button>)</h3>
             </div> -->
-            <!-- <div class="ms-5 px-4 shadow bg-body rounded w-75 mh-50 container">
+        <!-- <div class="ms-5 px-4 shadow bg-body rounded w-75 mh-50 container">
               <div class="row my-lg-4 justify-content-evenly">
                 <div class="col-lg-3 form-check">
                   <input class="form-check-input" type="checkbox" value="" id="Samosa" style="width: 16px;">
@@ -201,121 +210,115 @@
                 </div>
               </div>
             </div> -->
-            <!-- <div class="row input-group my-5">
+        <!-- <div class="row input-group my-5">
               <span class="col-lg-2">Quantity :</span>
               <input type="text" class="col-lg-2 form-control mx-sm-5" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
             </div> -->
-            <!-- <div class="row input-group ">
+        <!-- <div class="row input-group ">
               <span class="col-lg-2">Description :</span>
               <textarea class="form-control col-8" aria-label="With textarea"></textarea>
             </div> -->
-            <!-- <div class="my-3" style="text-align: center">
+        <!-- <div class="my-3" style="text-align: center">
               <button class="btn btn-primary btn-prev" type="button">Previous</button>
               <button class="btn btn-primary btn-next" type="button">Next</button>
             </div> -->
-          </div>
-          <div id="request" class="step">
-            <div class="container my-5 mx-5 overflow-auto">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="my-3" style="text-align: center">
-              <button class="btn btn-primary btn-prev" type="button">Previous</button>
-              <button class="btn btn-primary btn-next" type="button">Request</button>
-            </div>
-          </div>
-      </form>
-    </div>
-    <footer id="footer"></footer>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      </div>
+      <div id="request" class="step overflow-auto">
+        <div class="container my-5 mx-auto w-100">
+          <h2 class="mb-3">Preview</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Label</th>
+                <th scope="col">Option</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Event Name</td>
+                <td>Event 1</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Event Description</td>
+                <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed, nisi fuga repellat iure tenetur modi
+                  natus eum! Nobis magni esse in veniam laudantium aperiam libero.</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Event Type</td>
+                <td>Offline</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Date&Time</td>
+                <td>1-1-2022, 12:00PM</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="my-3" style="text-align: center">
+          <button class="btn btn-primary btn-prev" type="button">Previous</button>
+          <button class="btn btn-primary btn-next">Request</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <footer id="footer"></footer>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script>
-      const checkfunc = ()=>{
-        let check = document.getElementsByClassName("form-check-input")
-        for(let i of check){
-          // let attr = document.createAttribute("checked");
-          // console.log(i)  
-          i.setAttribute("checked", "");
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script>
+    const checkfunc = () => {
+      let check = document.getElementsByClassName("form-check-input")
+      for (let i of check) {
+        // let attr = document.createAttribute("checked");
+        // console.log(i)  
+        i.setAttribute("checked", "");
+      }
+    }
+  </script>
+  <script src="./schedule.js"></script>
+  <script>
+    let navitem = document.getElementsByClassName("nav-link");
+    const func = (e) => {
+      for (let item of navitem) {
+        if (item == e && item.classList.contains("active")) {
+          break;
+        }
+        if (item == e && !(item.classList.contains("active"))) {
+          item.classList.add("active");
+        }
+        else {
+          item.classList.remove("active");
         }
       }
-    </script>
-    <script src="./schedule.js"></script>
+    }
+    const ptoggle = () => {
+      let x = document.getElementById("Pass");
+      let icon = document.getElementsByClassName("bi")[0];
+      if (x.type === "password") {
+        x.type = "text";
+      }
+      else {
+        x.type = "password";
+      }
+      if (icon.classList.contains("bi-eye")) {
+        icon.classList.remove("bi-eye");
+        icon.classList.add("bi-eye-slash");
+      }
+      else {
+        icon.classList.remove("bi-eye-slash");
+        icon.classList.add("bi-eye");
+      }
+    }
+  </script>
 </body>
+
 </html>
