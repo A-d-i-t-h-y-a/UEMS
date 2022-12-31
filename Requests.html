@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Requests</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+  <script>
+    window.onload = ()=>{
+      let head = document.getElementById("header");
+      let foot = document.getElementById("footer");
+      let p1 = fetch("./temp.html");
+      let p2 = fetch("./foot.html");
+      p1.then((response)=>{
+        return response.text();
+      }).then((content)=>{
+        head.innerHTML = content;
+      })
+      p2.then((response)=>{
+        return response.text();
+      }).then((content)=>{
+        foot.innerHTML = content;
+      })
+    }
+  </script>
+</head>
+
+<body style="height: 100%">
+  <header id="header"></header>
+  <div class="container h-100">
+    <div class="ms-5 mt-3" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
+      <label class="btn btn-outline-primary me-3" for="btnradio1">Pending</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+      <label class="btn btn-outline-primary me-3" for="btnradio2">Accepted</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+      <label class="btn btn-outline-primary" for="btnradio3">Declined</label>
+    </div>
+    <div class="cards p-5 mt-3 w-100 shadow bg-body rounded overflow-auto" style="height: 40rem">
+      <div class="row justify-content-evenly">
+        <div class="col-6 card text-center mx-1 mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 1</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E1">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 1
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+        <div class="col-6 card text-center mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 2</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E2">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 2
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-evenly">
+        <div class="col-6 card text-center mx-1 mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 3</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E3">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 3
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+        <div class="col-6 card text-center mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 4</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E4">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 4
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-evenly">
+        <div class="col-6 card text-center mx-1 mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 5</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E5">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 5
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+        <div class="col-6 card text-center mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 6</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E6">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 6
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-evenly">
+        <div class="col-6 card text-center mx-1 mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 7</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E7">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 7
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+        <div class="col-6 card text-center mb-3" style="width: 35rem">
+          <div class="card-body">
+            <h5 class="card-title">Event 8</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officia, vitae ad quibusdam, dolor dicta voluptatum vel impedit
+              delectus ullam assumenda, consequatur cupiditate iusto
+              voluptatem atque dolorem earum quaerat illum aliquam veritatis
+              ea quas odit soluta officiis repellendus? Earum dolorum suscipit
+              molestiae. Itaque ex vel temporibus!
+              <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#E8">
+                Show More
+              </button>
+            </p>
+            <div class="modal fade" id="E8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Event 8
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum quia vitae asperiores, enim est amet, animi
+                    reprehenderit nisi minus voluptate maiores porro, quas
+                    doloremque! Quis maiores laboriosam sequi officia odio
+                    sunt, ut, dolore corrupti dolorum a quo adipisci facere
+                    animi reiciendis unde exercitationem hic, deleniti aut
+                    fugiat illo? Esse, quasi iusto! Aliquam illo neque quae
+                    accusantium inventore dolorem, provident, magni earum sit
+                    unde harum iure sequi, corrupti laboriosam nesciunt velit
+                    labore? Maiores voluptatum dolorem numquam? Minus
+                    perspiciatis, dolor qui ullam quos omnis eveniet.
+                    Deserunt, id. Tempore ratione esse explicabo eos molestias
+                    ducimus provident nulla, qui, maxime distinctio ea sint
+                    enim!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success me-5">Accept</a>
+            <a href="#" class="btn btn-lg btn-danger">Reject</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
