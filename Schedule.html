@@ -37,16 +37,16 @@
 <body style="height: 100%;">
   <header id="header"></header>
   <div id="main" class="container-fluid-lg d-flex flex-column flex-sm-row" style="min-height: 100%;">
-    <div class="my-sm-5 ms-lg-5 shadow bg-body rounded mx-3 py-3">
+    <div class="my-sm-5 ms-lg-5 shadow bg-body rounded py-3">
       <!-- <div class="row h-100"> -->
       <div class="d-flex flex-row flex-sm-column justify-content-evenly mx-lg-5 h-100">
-        <button class="btn btn-link text-decoration-none text-black" onclick="leftnav('book')">Book</button>
+        <button class="btn btn-link text-decoration-none text-black navact" onclick="leftnav('book', this);">Book</button>
         <button class="btn btn-link text-decoration-none text-black"
-          onclick="leftnav('refreshment')">Refreshments</button>
-        <button class="btn btn-link text-decoration-none text-black" onclick="leftnav('request')">Request</button>
+          onclick="leftnav('refreshment', this)">Refreshments</button>
+        <button class="btn btn-link text-decoration-none text-black" onclick="leftnav('request', this)">Request</button>
       </div>
     </div>
-    <form class="Book w-75 ms-sm-5 me-sm-5 my-5 shadow bg-body rounded d-flex container">
+    <form class="Book container w-sm-75 ms-sm-5 me-sm-5 my-5 shadow bg-body rounded d-flex">
       <div id="book" class="step act" style="overflow: auto;">
         <ul>
           <li>
@@ -102,7 +102,7 @@
             </div>
           </li>
           <li>
-            <div class="ms-1 p-4 shadow bg-body rounded w-75 mh-50 container">
+            <div class="ms-1 p-5 shadow bg-body rounded w-sm-75 mh-50 container">
               <div class="row my-lg-4 justify-content-evenly">
                 <div class="col-lg-3 form-check">
                   <input class="form-check-input" type="checkbox" value="" id="Samosa" style="width: 16px;">
@@ -147,14 +147,14 @@
           </li>
           <li>
             <div class="row input-group my-5">
-              <span class="col-lg-2">Quantity :</span>
+              <span class="col-lg-2">Quantity</span>
               <input type="text" class="col-lg-8 form-control" placeholder="Quantity" aria-label="Quantity"
                 aria-describedby="basic-addon1">
             </div>
           </li>
           <li class="mb-5">
             <div class="row input-group ">
-              <span class="col-lg-2">Description :</span>
+              <span class="col-lg-2">Description</span>
               <textarea class="form-control col-8" aria-label="With textarea"></textarea>
             </div>
           </li>

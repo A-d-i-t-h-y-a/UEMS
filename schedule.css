@@ -55,3 +55,12 @@
     display: block;
 }
 
+.btn-link:hover {
+    transition: .3s;
+    transform: scale(1.1);
+    border-bottom: 2px solid rgb(0, 136, 255);
+}
+
+.navact{
+    border-bottom: 4px solid rgb(0, 136, 255);
+}

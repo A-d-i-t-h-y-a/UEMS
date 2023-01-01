@@ -175,6 +175,7 @@ nextBtn = document.querySelectorAll(".btn-next");
 prevBtn = document.querySelectorAll(".btn-prev");
 formStep = document.querySelectorAll(".step");
 Bookbtn = document.getElementById("Bookbtn");
+btn_link = document.getElementsByClassName("btn-link");
 
 let temp = 0;
 
@@ -207,8 +208,10 @@ const nextstep = ()=>{
     }
   }
   formStep[a].classList.remove("act");
+  btn_link[a].classList.remove("navact");
   a++;
   formStep[a].classList.add("act");
+  btn_link[a].classList.add("navact");
 }
 
 const prevstep = ()=>{
@@ -224,11 +227,13 @@ const prevstep = ()=>{
     }
   }
   formStep[a].classList.remove("act");
+  btn_link[a].classList.remove("navact");
   a--;
   formStep[a].classList.add("act");
+  btn_link[a].classList.add("navact");
 }
 
-const leftnav = (e)=>{
+const leftnav = (e, element)=>{
   for(let i of formStep){
     if(i.id == e && i.classList.contains("act")){
       break;
@@ -238,6 +243,17 @@ const leftnav = (e)=>{
     }
     else{
       i.classList.remove("act");
+    }
+  }
+  for(let i of btn_link){
+    if(i==element && element.classList.contains("navact")){
+      break;
+    }
+    if(i==element && !(element.classList.contains("navact"))){
+      element.classList.add("navact");
+    }
+    else{
+      i.classList.remove("navact");
     }
   }
 }
