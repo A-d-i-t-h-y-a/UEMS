@@ -11,8 +11,9 @@
   }
 
   .navbar-brand:hover {
-    transition: .5s ease-in-out;
-    transform: rotate(360deg);
+    transition: .2s ease-in-out;
+    /* transform: rotate(360deg); */
+    transform: rotate(-10deg) scale(1.1);
   }
 
   /* .navbar-brand:active{
@@ -23,10 +24,9 @@
     .navbar .nav-link:hover {
       transition: .3s;
       transform: scale(1.1);
-      font-weight: 600;
+      border-bottom: 2px solid rgb(0, 136, 255);
     }
   }
-
   .btn:active {
     transform: scale(0.9);
   }
@@ -42,19 +42,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
         <li class="nav-item mx-5">
-          <a class="nav-link active" aria-current="page" href="./index.html" onclick="func(this)">Home</a>
+          <a class="nav-link" aria-current="page" href="./index.html" id="navhome">Home</a>
         </li>
         <li class="nav-item mx-5">
-          <a class="nav-link" aria-current="page" href="./events.html" onclick="func(this)">Events</a>
+          <a class="nav-link" aria-current="page" href="./events.html" id="navevents">Events</a>
         </li>
         <li class="after_login nav-item mx-5">
-          <a class="nav-link" aria-current="page" href="./Schedule.html" onclick="func(this)">Schedule Event</a>
+          <a class="nav-link" aria-current="page" href="./Schedule.html" id="navsch">Schedule Event</a>
         </li>
         <li class="after_login nav-item mx-5">
-          <a class="nav-link" aria-current="page" href="./Reports.html" onclick="func(this)">Reports</a>
+          <a class="nav-link" aria-current="page" href="./Reports.html" id="navreports">Reports</a>
         </li>
         <li class="after_login nav-item mx-5">
-          <a class="nav-link" aria-current="page" href="./Requests.html" onclick="func(this)">Requests</a>
+          <a class="nav-link" aria-current="page" href="./Requests.html" id="navreq">Requests</a>
         </li>
       </ul>
       <button class="btn btn-outline-success px-5" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
