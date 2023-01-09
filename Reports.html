@@ -41,15 +41,17 @@
 <body style="height: 100%;">
   <header id="header"></header>
   <div class="container mt-2">
-    <button class="btn my-3 btn-outline-primary" onclick="filter()"><i class="bi bi-filter-right me-2"></i>Filter</button>
-    <div id="filter" class="ms-2" style="display: none;">
-      <div class="row input-group mb-3">
+    <button class="btn my-3 btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="filter"><i class="bi bi-filter-right me-2"></i>Filter</button>
+    <!-- <button class="btn my-3 btn-outline-primary" onclick="filter()" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample"><i class="bi bi-filter-right me-2"></i>Filter</button> -->
+    <!-- <div id="filter" class="collapse ms-2" style="display: none;"> -->
+    <div id="filter" class="collapse">
+      <div class="row input-group mb-3 mx-0">
         <span class="col-lg-1 input-group-text">From Date</span>
         <input type="date" class="col-lg-5 form-control" name="date">
         <span class="input-group-text col-lg-1">To Date</span>
         <input type="date" class="col-lg-5 form-control" name="date">
       </div>
-      <div class="row input-group my-4">
+      <div class="row input-group my-4 mx-0">
         <span class="col-lg-1 input-group-text">Event Type</span>
         <select class="form-select col-lg-5 me-sm-2" id="inputGroupSelect01" name="type">
           <option selected>Offline</option>
@@ -101,15 +103,15 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"></script>
     <script>
-      const filter = () => {
-        let fil = document.getElementById("filter");
-        if (fil.style.display == "none") {
-          fil.style.display = "block";
-        }
-        else {
-          fil.style.display = "none";
-        }
-      }
+      // const filter = () => {
+      //   let fil = document.getElementById("filter");
+      //   if (fil.style.display == "none") {
+      //     fil.style.display = "block";
+      //   }
+      //   else {
+      //     fil.style.display = "none";
+      //   }
+      // }
       // let tab = document.querySelector(".table");
       // let z = 0;
       // for(let i of tab.rows){
